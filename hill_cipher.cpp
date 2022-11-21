@@ -208,7 +208,7 @@ int main(void)
 
 
 /*
- text to encrypt : johncena
+ text to encrypt : johncenaa
  order of key: 3 3
  key matrix: 
  2
