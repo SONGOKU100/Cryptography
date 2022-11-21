@@ -14,7 +14,7 @@ int main()
         cin >> key;
         cout << "Enter the plaintext: ";
         cin >> plaintext;
-        for (i = 0; i < plaintext.length(); i++)
+        for (i = 0; i < plaintext.size(); i++)
         {
             cipherText += (plaintext[i] - 'A' + key) % 26 + 'A';
         }
@@ -26,7 +26,7 @@ int main()
         cin >> key;
         cout << "Enter the ciphertext: ";
         cin >> cipherText;
-        for (i = 0; i < cipherText.length(); i++)
+        for (i = 0; i < cipherText.size(); i++)
         {
             plaintext += (cipherText[i] - 'A' - key + 26) % 26 + 'A';
         }
