@@ -1,3 +1,5 @@
+// use  All uppercase letters and no space between words
+
 #include <iostream>
 #include <vector>
 #include <string>
