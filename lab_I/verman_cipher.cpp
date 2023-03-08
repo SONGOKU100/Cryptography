@@ -1,25 +1,49 @@
+//Verman Cipher
+
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int i,j;
-    string message;
-    cout<<"Enter the message: ";
-    cin>>message;
-    string key;
-    cout<<"Enter the key: ";
-    cin>>key;
-    int mod = key.size();
+string encrypt(string m,string key){
+    int i,j,k,sum=0;
+    string ans="";
+	int mod = key.size();
     j=0;
-    for(i=key.size();i<message.size();i++){
+    for(i=key.size();i<m.size();i++){
         key+=key[j%mod];
         j++;
     }
-    string cipherText="";
-    for(i=0;i<message.size();i++){
-        cipherText += (key[i]-'A'+message[i]-'A')%26+'A';
+    for(i=0;i<m.size();i++){
+        ans += (key[i]-'A'+m[i]-'A')%26+'A';
     }
-    cout<<"Encrypted message: "<<cipherText<<'\n';
-    
+    return ans;
+}
+
+string decrypt(string m,string key){
+	int i,j,k,sum=0;
+	int mod = key.size();
+    j=0;
+    for(i=key.size();i<m.size();i++){
+        key+=key[j%mod];
+        j++;
+    }
+    string ans="";
+    for(i=0;i<m.size();i++){
+        ans += (m[i]-key[i]+26)%26+'A';
+    }
+    return ans;
+	
+}
+
+int main(){
+    string m,key,ans="";
+    cout<<"Enter the message: ";
+    cin>>m;
+    cout<<"Enter the key: ";
+    cin>>key;
+    ans = encrypt(m,key);
+    cout<<"Encrypted message: "<<ans<<'\n';
+    ans = decrypt(ans,key);
+    cout<<"Decrypted message: "<<ans<<'\n';
     return 0;
 }
+
