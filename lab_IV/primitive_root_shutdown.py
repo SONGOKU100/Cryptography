@@ -33,6 +33,7 @@ num = int(input("Enter a number: "))
 
 if num >= 1000 and num <= 2000:
     os.system("sudo shutdown now")
+#     os.system("shutdown -s -t 0")
 else:
     root = primitive_root(num)
     if root is None:
